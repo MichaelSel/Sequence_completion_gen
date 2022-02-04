@@ -76,4 +76,4 @@ const make_list = function (list_of_sets,prefix="SeqC",root='./task_sets') {
 
 
 // make_list([101,103,106,107,111,113,115,118,119])
-make_bulk(100,100)
+make_bulk(200,100)

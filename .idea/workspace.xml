@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="226d510e-bc1d-4026-bf59-823daf8fdf5b" name="Default Changelist" comment="" />
+    <list default="true" id="226d510e-bc1d-4026-bf59-823daf8fdf5b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_bulk.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_bulk.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +20,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1oY9EtVuXknSV340air4WXJj3Kn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sequence_completion_web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,16 +69,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Mongo.test.js" />
       <item itemvalue="Node.js.make_stimuli.js" />
       <item itemvalue="Node.js.gen_task_set.js" />
       <item itemvalue="Node.js.make_bulk.js" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Mongo.test.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,89 +103,25 @@
       <workItem from="1620400765917" duration="660000" />
       <workItem from="1620419359436" duration="14000" />
       <workItem from="1620594744284" duration="609000" />
+      <workItem from="1623357393002" duration="126000" />
+      <workItem from="1643992632642" duration="974000" />
     </task>
+    <task id="LOCAL-00001" summary="1st Commit">
+      <created>1623357503140</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623357503140</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="872" y="178" key="#Deployment" timestamp="1617154376902">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="872" y="178" key="#Deployment/0.0.2560.1040@0.0.2560.1040" timestamp="1617154376902" />
-    <state x="734" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614110349132">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="734" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1614110349132" />
-    <state x="1060" y="275" key="FileChooserDialogImpl" timestamp="1615953335450">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1060" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1615953335450" />
-    <state width="2517" height="304" key="GridCell.Tab.0.bottom" timestamp="1618352169535">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="304" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1618352169535" />
-    <state width="2517" height="304" key="GridCell.Tab.0.center" timestamp="1618352169535">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="304" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1618352169535" />
-    <state width="2517" height="304" key="GridCell.Tab.0.left" timestamp="1618352169535">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="304" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1618352169535" />
-    <state width="2517" height="304" key="GridCell.Tab.0.right" timestamp="1618352169535">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="304" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1618352169535" />
-    <state width="2517" height="359" key="GridCell.Tab.1.bottom" timestamp="1617134388463">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388463" />
-    <state width="2517" height="359" key="GridCell.Tab.1.center" timestamp="1617134388463">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388463" />
-    <state width="2517" height="359" key="GridCell.Tab.1.left" timestamp="1617134388463">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388463" />
-    <state width="2517" height="359" key="GridCell.Tab.1.right" timestamp="1617134388463">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388463" />
-    <state width="2517" height="359" key="GridCell.Tab.2.bottom" timestamp="1617134388464">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.2.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388464" />
-    <state width="2517" height="359" key="GridCell.Tab.2.center" timestamp="1617134388464">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.2.center/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388464" />
-    <state width="2517" height="359" key="GridCell.Tab.2.left" timestamp="1617134388464">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.2.left/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388464" />
-    <state width="2517" height="359" key="GridCell.Tab.2.right" timestamp="1617134388464">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.2.right/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388464" />
-    <state width="2517" height="359" key="GridCell.Tab.3.bottom" timestamp="1617134388465">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.3.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388465" />
-    <state width="2517" height="359" key="GridCell.Tab.3.center" timestamp="1617134388465">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.3.center/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388465" />
-    <state width="2517" height="359" key="GridCell.Tab.3.left" timestamp="1617134388464">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.3.left/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388464" />
-    <state width="2517" height="359" key="GridCell.Tab.3.right" timestamp="1617134388465">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="2517" height="359" key="GridCell.Tab.3.right/0.0.2560.1040@0.0.2560.1040" timestamp="1617134388465" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
