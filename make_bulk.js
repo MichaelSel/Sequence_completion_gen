@@ -16,7 +16,7 @@ const make_txt = function (starting_id,num_of_sets,prefix="SeqC",root='./task_se
 
 }
 
-const make_bulk = function (starting_id=0,num_of_sets=11,prefix="SeqC",root='./task_sets2') {
+const make_bulk = function (starting_id=0,num_of_sets=11,prefix="SeqC",root='./task_sets3') {
     if (!fs.existsSync(root)){
         fs.mkdirSync(root);
     }
@@ -76,4 +76,4 @@ const make_list = function (list_of_sets,prefix="SeqC",root='./task_sets') {
 
 
 // make_list([101,103,106,107,111,113,115,118,119])
-make_bulk(200,100)
+make_bulk(300,100)
