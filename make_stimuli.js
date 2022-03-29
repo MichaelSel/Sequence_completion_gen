@@ -39,7 +39,7 @@ const shuffle = function (array) {
     return array;
 }
 
-const make_fragment = function (fragment_length=rand_int_in_range(2,3),max_traverse=2,min_ginterval=-2,max_ginterval=2,repeat_last=false) {
+const make_fragment = function (fragment_length=rand_int_in_range(3,3),max_traverse=2,min_ginterval=-2,max_ginterval=2,repeat_last=false) {
     let interval_fragment = []
     for (let i = 0; i < fragment_length; i++) {
         interval_fragment.push(rand_int_in_range_but_not_zero(min_ginterval,max_ginterval))
@@ -48,7 +48,7 @@ const make_fragment = function (fragment_length=rand_int_in_range(2,3),max_trave
     let interval_fragment_traverse = interval_fragment.reduce((ag,e)=>ag+e,0)
     if(Math.abs(interval_fragment_traverse)>max_traverse || interval_fragment_traverse==0) return make_fragment(fragment_length,max_traverse,min_ginterval,max_ginterval)
     if(interval_fragment.filter(f=>f>0).length==0 || interval_fragment.filter(f=>f<0).length==0) return make_fragment(fragment_length,max_traverse,min_ginterval,max_ginterval)
-
+    console.log(interval_fragment)
     return interval_fragment
 }
 
@@ -74,8 +74,9 @@ const make_trial = function (fragment,scale = edo.scale(diatonic_pitches),starti
         console.log("Make longer to prevent similarity")
         return make_trial(fragment,scale,starting_pitch,mode,repeat_fragment+1,type,violated,test_pos) //If they are the same add another repetition to distinguish them
     }
-    if(type=="diatonic") melody = dia_melody
-    else melody = ch_melody
+
+    if(type=="chromatic") melody = ch_melody
+    else melody = dia_melody
     true_note = melody.slice(melody.length-test_pos,(melody.length-test_pos)+1)[0]
     melody = melody.slice(0,melody.length-test_pos)
     if(true_note>Math.max(...melody) || true_note<Math.min(...melody)) {
@@ -89,14 +90,14 @@ const make_trial = function (fragment,scale = edo.scale(diatonic_pitches),starti
 
 }
 
-const make_stimuli = function (subject_id,total_fragments=4,questions_per_fragment_per_condition=2,foil_rate=0.3,diatonic_pitches = [0,2,4,5,7,9,11]) {
+const make_stimuli = function (subject_id,total_fragments=4,questions_per_fragment_per_condition=2,foil_rate=0.3,diatonic_pitches = [0,2,4,5,7,9,11],scale_name="diatonic") {
 
     const repeat_fragment = 4
     const trials_per_condition = questions_per_fragment_per_condition*total_fragments
     const total_trials = trials_per_condition*2 //two conditions
 
     // let type_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i>=total_trials/2)?"diatonic":"chromatic")) //half the trials diatonic and half chromatic
-    let starting_pitch_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i%7)-3)) //transposed from -3 to +3
+    let starting_pitch_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i%4)+3)) //transposed from 3-6 semitones higher or lower (depending on whether melody is descending or ascending)
     let starting_mode_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>i%diatonic_pitches.length)) //Every mode of the diatonic
     let diatonic_violated = shuffle(Array.from(Array(trials_per_condition)).map((e,i)=>(i<trials_per_condition*foil_rate)?true:false))
     let chromatic_violated = shuffle(Array.from(Array(trials_per_condition)).map((e,i)=>(i<trials_per_condition*foil_rate)?true:false))
@@ -120,16 +121,19 @@ const make_stimuli = function (subject_id,total_fragments=4,questions_per_fragme
     let stimuli = []
     fragments.forEach(frag=>{
         for (let i = 0; i < questions_per_fragment_per_condition; i++) {
-            const starting_pitch_d = starting_pitch_random.pop()
+            const descending = frag.reduce((ag,e)=>ag+e,0)<0
+            const starting_pitch_d = (descending)?starting_pitch_random.pop():-starting_pitch_random.pop()
             const starting_mode_d = starting_mode_random.pop()
             const violated_d = diatonic_violated.pop()
-            const trial_d = make_trial(frag,diatonic,starting_pitch_d,starting_mode_d,repeat_fragment,"diatonic",violated_d)
+            const trial_d = make_trial(frag,diatonic,starting_pitch_d,starting_mode_d,repeat_fragment,scale_name,violated_d)
+
             stimuli.push(trial_d)
-            const starting_pitch_c = starting_pitch_random.pop()
+            const starting_pitch_c = (descending)?starting_pitch_random.pop():-starting_pitch_random.pop()
             const starting_mode_c = starting_mode_random.pop()
             const violated_c = chromatic_violated.pop()
             const trial_c = make_trial(frag,diatonic,starting_pitch_c,starting_mode_c,repeat_fragment,"chromatic",violated_c)
             stimuli.push(trial_c)
+            console.log(trial_d,trial_c,descending,starting_pitch_d,starting_pitch_c)
 
         }
     })

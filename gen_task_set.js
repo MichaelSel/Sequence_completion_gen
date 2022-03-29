@@ -9,6 +9,24 @@ const all_sets = JSON.parse(fs.readFileSync('./selected-7-note-sets.json','utf-8
 const matrix = JSON.parse(fs.readFileSync('./subject_matrix.json','utf-8'))
 const EDO = require("edo.js").EDO
 
+const shuffle = function (array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
 
 /**Set Settings here*/
 async function gen_task_set (sub_id,prefix="SVG",root='./task_sets') {
@@ -26,7 +44,9 @@ async function gen_task_set (sub_id,prefix="SVG",root='./task_sets') {
             return stimulus
         })
 
-    const stimuli = make_stimuli(sub_name,30,2,0.3) /**Set Settings here*/
+    const stimuliDiatonic = make_stimuli(sub_name,30,2,0.3,[0,2,4,5,7,9,11],"diatonic") /**Set Settings here*/
+    const stimuliPentatonic = make_stimuli(sub_name,30,2,0.3,[0,2,4,7,9],"pentatonic") /**Set Settings here*/
+    const stimuli = shuffle([...shuffle(stimuliDiatonic),...shuffle(stimuliPentatonic)])
             .map((stimulus,Q_num)=>{
                 stimulus.Q_num = Q_num+1
                 stimulus.probe_file = "Q-" +(stimulus.Q_num)+ "-000-probe.mp3"

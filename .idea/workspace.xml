@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="226d510e-bc1d-4026-bf59-823daf8fdf5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen_task_set.js" beforeDir="false" afterPath="$PROJECT_DIR$/gen_task_set.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_audio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/make_bulk.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_bulk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_stimuli.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_stimuli.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +110,8 @@
       <workItem from="1643992632642" duration="1247000" />
       <workItem from="1644192939395" duration="527000" />
       <workItem from="1645115060156" duration="1247000" />
+      <workItem from="1648578151695" duration="1049000" />
+      <workItem from="1648579585327" duration="2036000" />
     </task>
     <task id="LOCAL-00001" summary="1st Commit">
       <created>1623357503140</created>
@@ -142,7 +147,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="NONE" type="javascript">
           <url>file://$PROJECT_DIR$/make_stimuli.js</url>
-          <line>78</line>
+          <line>79</line>
           <log-expression expression="        console.log(melody,test_pos)&#10;        return console.error(&quot;HELP!!!!&quot;)&#10;    }" language="JavaScript" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
