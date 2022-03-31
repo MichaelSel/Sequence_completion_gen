@@ -39,7 +39,7 @@ const shuffle = function (array) {
     return array;
 }
 
-const make_fragment = function (fragment_length=rand_int_in_range(3,3),max_traverse=2,min_ginterval=-2,max_ginterval=2,repeat_last=false) {
+const make_fragment = function (fragment_length=rand_int_in_range(3,3),max_traverse=3,min_ginterval=-2,max_ginterval=2,repeat_last=false) {
     let interval_fragment = []
     for (let i = 0; i < fragment_length; i++) {
         interval_fragment.push(rand_int_in_range_but_not_zero(min_ginterval,max_ginterval))
@@ -48,7 +48,6 @@ const make_fragment = function (fragment_length=rand_int_in_range(3,3),max_trave
     let interval_fragment_traverse = interval_fragment.reduce((ag,e)=>ag+e,0)
     if(Math.abs(interval_fragment_traverse)>max_traverse || interval_fragment_traverse==0) return make_fragment(fragment_length,max_traverse,min_ginterval,max_ginterval)
     if(interval_fragment.filter(f=>f>0).length==0 || interval_fragment.filter(f=>f<0).length==0) return make_fragment(fragment_length,max_traverse,min_ginterval,max_ginterval)
-    console.log(interval_fragment)
     return interval_fragment
 }
 
@@ -79,10 +78,16 @@ const make_trial = function (fragment,scale = edo.scale(diatonic_pitches),starti
     else melody = dia_melody
     true_note = melody.slice(melody.length-test_pos,(melody.length-test_pos)+1)[0]
     melody = melody.slice(0,melody.length-test_pos)
-    if(true_note>Math.max(...melody) || true_note<Math.min(...melody)) {
-        return make_trial(fragment,scale,starting_pitch,mode,repeat_fragment,type,violated,test_pos+1) //If the test note was not previously in the melody, the prediction will make a contour violation, therefore, create a new one
-    }
+    // if(true_note>Math.max(...melody) || true_note<Math.min(...melody)) {
+    //     return make_trial(fragment,scale,starting_pitch,mode,repeat_fragment,type,violated,test_pos+1) //If the test note was not previously in the melody, the prediction will make a contour violation, therefore, create a new one
+    // }
     violation_note = get_violation_note(melody,true_note)
+
+    //If the violation note and the true don't form the same contour with the last note, make new trial
+    if(violation_note<melody[melody.length-1]!=true_note<melody[melody.length-1]) {
+        return make_trial(fragment,scale,starting_pitch,mode,repeat_fragment,type,violated,test_pos+1)
+    }
+
     unique = edo.scale(melody).pitches.length
     scale_pitches = scale.pitches
 
@@ -97,7 +102,7 @@ const make_stimuli = function (subject_id,total_fragments=4,questions_per_fragme
     const total_trials = trials_per_condition*2 //two conditions
 
     // let type_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i>=total_trials/2)?"diatonic":"chromatic")) //half the trials diatonic and half chromatic
-    let starting_pitch_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i%4)+3)) //transposed from 3-6 semitones higher or lower (depending on whether melody is descending or ascending)
+    let starting_pitch_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>(i%5)+10)) //transposed from 10-14 semitones higher or lower (depending on whether melody is descending or ascending)
     let starting_mode_random = shuffle(Array.from(Array(total_trials)).map((e,i)=>i%diatonic_pitches.length)) //Every mode of the diatonic
     let diatonic_violated = shuffle(Array.from(Array(trials_per_condition)).map((e,i)=>(i<trials_per_condition*foil_rate)?true:false))
     let chromatic_violated = shuffle(Array.from(Array(trials_per_condition)).map((e,i)=>(i<trials_per_condition*foil_rate)?true:false))
@@ -133,7 +138,6 @@ const make_stimuli = function (subject_id,total_fragments=4,questions_per_fragme
             const violated_c = chromatic_violated.pop()
             const trial_c = make_trial(frag,diatonic,starting_pitch_c,starting_mode_c,repeat_fragment,"chromatic",violated_c)
             stimuli.push(trial_c)
-            console.log(trial_d,trial_c,descending,starting_pitch_d,starting_pitch_c)
 
         }
     })

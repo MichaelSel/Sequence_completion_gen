@@ -2,7 +2,7 @@ const fs = require('fs');
 const gen_task_set = require('./gen_task_set')
 const make_folder = require('./make_folder')
 
-const make_txt = function (starting_id,num_of_sets,prefix="SeqC",root='./task_sets') {
+const make_txt = function (starting_id,num_of_sets,prefix="SeqInLab",root='./task_sets') {
     let subs = []
     for (let sub_id = starting_id; sub_id<starting_id+num_of_sets ; sub_id++) {
         subs.push(prefix + "0".repeat(4-String(sub_id).length) + String(sub_id))
@@ -16,7 +16,7 @@ const make_txt = function (starting_id,num_of_sets,prefix="SeqC",root='./task_se
 
 }
 
-const make_bulk = function (starting_id=0,num_of_sets=11,prefix="SeqC",root='./task_sets3') {
+const make_bulk = function (starting_id=0,num_of_sets=11,prefix="SeqMEG",root='./task_sets') {
     if (!fs.existsSync(root)){
         fs.mkdirSync(root);
     }
@@ -76,4 +76,4 @@ const make_list = function (list_of_sets,prefix="SeqC",root='./task_sets') {
 
 
 // make_list([101,103,106,107,111,113,115,118,119])
-make_bulk(0,1)
+make_bulk(0,40)

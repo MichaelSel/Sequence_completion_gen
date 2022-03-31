@@ -7,7 +7,6 @@
     <list default="true" id="226d510e-bc1d-4026-bf59-823daf8fdf5b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen_task_set.js" beforeDir="false" afterPath="$PROJECT_DIR$/gen_task_set.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/make_audio.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_audio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/make_bulk.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_bulk.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/make_stimuli.js" beforeDir="false" afterPath="$PROJECT_DIR$/make_stimuli.js" afterDir="false" />
     </list>
@@ -38,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sequence_completion_web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sequence_completion_InLab_gen" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -111,7 +110,9 @@
       <workItem from="1644192939395" duration="527000" />
       <workItem from="1645115060156" duration="1247000" />
       <workItem from="1648578151695" duration="1049000" />
-      <workItem from="1648579585327" duration="2036000" />
+      <workItem from="1648579585327" duration="2788000" />
+      <workItem from="1648751409567" duration="7606000" />
+      <workItem from="1648762941089" duration="1573000" />
     </task>
     <task id="LOCAL-00001" summary="1st Commit">
       <created>1623357503140</created>
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643994233716</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1st Commit">
+      <created>1648581878756</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648581878756</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,12 +150,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/make_stimuli.js</url>
-          <line>54</line>
+          <line>53</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="NONE" type="javascript">
           <url>file://$PROJECT_DIR$/make_stimuli.js</url>
-          <line>79</line>
+          <line>78</line>
           <log-expression expression="        console.log(melody,test_pos)&#10;        return console.error(&quot;HELP!!!!&quot;)&#10;    }" language="JavaScript" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
